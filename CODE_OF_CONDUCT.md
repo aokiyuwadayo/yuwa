@@ -1,6 +1,6 @@
-# YUWA Code of Conduct
+# Wacca Code of Conduct
 
-YUWA は、メンバーが安心して関われるサークル運営の場を目指します。
+Wacca は、メンバーが安心して関われるサークル運営の場を目指します。
 このリポジトリでの議論・開発参加においても、同じ精神を大事にします。
 
 ## 私たちが大事にすること
@@ -27,7 +27,7 @@ YUWA は、メンバーが安心して関われるサークル運営の場を目
 
 ## 参考にしたもの
 
-本 Code of Conduct は [Contributor Covenant 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) を参考に、YUWA の文脈（学生サークル）に合わせて簡略化しています。
+本 Code of Conduct は [Contributor Covenant 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) を参考に、Wacca の文脈（学生サークル）に合わせて簡略化しています。
 
 ---
 

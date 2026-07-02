@@ -1,4 +1,4 @@
-# YUWA ロードマップ・進め方
+# Wacca ロードマップ・進め方
 
 > **対象読者**: エンジニア（実装担当）、青木（PO）、運営チーム
 > **目的**: 「どう進めるか」を共有し、不要なすれ違いをなくす
@@ -11,7 +11,7 @@
 ```
 Phase 0: 準備             ← 完了
    ├ 要件定義 v0.1
-   ├ ブランド決定（YUWA）
+   ├ ブランド決定（Wacca）
    └ リポ・ドキュメント整備
 
 Phase 1: 環境構築          ← ここから（合流したエンジニアの最初のタスク）
@@ -161,8 +161,8 @@ Phase 5: v0.2 機能拡張
 
 ### リポを取ってくる
 ```bash
-git clone https://github.com/aokiyuwadayo/yuwa.git
-cd yuwa
+git clone https://github.com/aokiyuwadayo/Wacca.git
+cd Wacca
 ```
 
 ### Phase 1 の最初の作業

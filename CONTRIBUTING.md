@@ -1,6 +1,6 @@
-# Contributing to YUWA
+# Contributing to Wacca
 
-YUWA の開発に参加してくださりありがとうございます 🙏
+Wacca の開発に参加してくださりありがとうございます 🙏
 
 このドキュメントは、コードを書く方（主に部員ボランティアエンジニア）に向けた開発フローのガイドです。
 
@@ -118,7 +118,7 @@ feat(auth): 招待コード経由のサインアップフロー実装
 
 ## 3. ローカル開発のセットアップ
 
-> Next.js プロジェクトはまだ初期化されていません。最初に着手する方は [Phase 1 の Day 1 Issue](https://github.com/aokiyuwadayo/yuwa/issues) を参照してください。
+> Next.js プロジェクトはまだ初期化されていません。最初に着手する方は [Phase 1 の Day 1 Issue](https://github.com/aokiyuwadayo/Wacca/issues) を参照してください。
 
 ### 前提
 - Node.js 20 以上（推奨 v24 系）
@@ -130,8 +130,8 @@ feat(auth): 招待コード経由のサインアップフロー実装
 
 ### 初期化後の標準フロー（Phase 1 完了後）
 ```bash
-git clone https://github.com/aokiyuwadayo/yuwa.git
-cd yuwa
+git clone https://github.com/aokiyuwadayo/Wacca.git
+cd Wacca
 pnpm install
 
 # リモート Supabase の接続情報が未共有の場合はローカルで起動
@@ -162,7 +162,7 @@ pnpm dev
 Next.js 初期化後の標準構成:
 
 ```
-yuwa/
+Wacca/
 ├── src/
 │   ├── app/                  # App Router のページ
 │   │   ├── (auth)/           # 認証関連

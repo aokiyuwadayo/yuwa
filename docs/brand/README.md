@@ -1,6 +1,8 @@
-# YUWA ブランドアセット
+# Wacca ブランドアセット
 
-このディレクトリには YUWA のロゴ・ファビコン・OG image 等のソース SVG が入っています。
+> ⚠️ **TODO**: 以下の SVG は旧 YUWA ブランドのロゴタイプのまま。Wacca ロゴへの差し替えが必要（デザイン作業のためスコープ外で保留中）。
+
+このディレクトリには Wacca のロゴ・ファビコン・OG image 等のソース SVG が入っています。
 
 > 📘 ブランドの使い方ガイドラインは [`../brand-guidelines.md`](../brand-guidelines.md) を参照してください。
 
@@ -37,16 +39,16 @@ rsvg-convert -h 630 docs/brand/og-image-template.svg -o public/og-image.png
 
 ```tsx
 export const metadata: Metadata = {
-  title: 'YUWA',
+  title: 'Wacca',
   description: 'サークル運営を、もっと温かく。',
   icons: {
     icon: '/favicon.svg',
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'YUWA',
+    title: 'Wacca',
     description: 'サークル運営を、もっと温かく。',
-    url: 'https://yuwa.club',
+    url: 'https://wacca.club',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
 }
@@ -60,4 +62,4 @@ export const metadata: Metadata = {
 
 ## ライセンス・帰属
 
-このディレクトリ内のアセットは YUWA プロジェクトのものであり、外部からの複製・転用には PO（青木）への確認をお願いします（詳細はリポルートの LICENSE を確認。未定の場合はデフォルト All Rights Reserved）。
+このディレクトリ内のアセットは Wacca プロジェクトのものであり、外部からの複製・転用には PO（青木）への確認をお願いします（詳細はリポルートの LICENSE を確認。未定の場合はデフォルト All Rights Reserved）。
