@@ -25,7 +25,7 @@ export default function Home() {
           場をつくる Web アプリです。
         </p>
 
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
           <Card>
             <CardHeader>
               <CardTitle>🗣️ 匿名意見箱</CardTitle>
@@ -49,6 +49,18 @@ export default function Home() {
               「私も行く」のひと押しで、一人で行きづらいイベントも仲間と一緒に。
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>🗓️ 活動カレンダー</CardTitle>
+              <CardDescription className="text-pretty [word-break:keep-all]">
+                部会・作業会・発表準備を月間カレンダーで共有。
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-pretty text-muted-foreground [word-break:keep-all]">
+              予定、議事録、写真フォルダを残し、Googleカレンダー用に書き出せます。
+            </CardContent>
+          </Card>
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -57,6 +69,9 @@ export default function Home() {
           </Button>
           <Button asChild variant="outline">
             <Link href="/posts">みんなの声を見る</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/schedule">活動カレンダー</Link>
           </Button>
           <Button asChild variant="ghost">
             <a
