@@ -32,7 +32,7 @@ assignees: ''
 
 - 端末: <!-- 例: iPhone 15 / MacBook Air M2 -->
 - ブラウザ: <!-- 例: Safari 17, Chrome 125 -->
-- ページ URL: <!-- 例: https://yuwa.club/posts -->
+- ページ URL: <!-- 例: https://wacca.club/posts -->
 - 発生日時: <!-- 例: 2026-06-15 14:30 頃 -->
 
 ## スクリーンショット / 動画

@@ -1,7 +1,8 @@
-# Local Supabase configuration for YUWA.
+# Local Supabase configuration for Wacca (旧 YUWA).
 # Remote production project creation should use Northeast Asia (Tokyo) in the
 # Supabase dashboard; region is not a local CLI setting.
 
+# project_id は据え置き（変更するとローカル Docker ボリュームが別物になり db reset が必要になるため）
 project_id = "yuwa"
 
 [api]

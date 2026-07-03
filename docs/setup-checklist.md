@@ -9,14 +9,14 @@
 
 ## 0. 概要 — PO が手を動かす作業
 
-YUWA 実装には、コード以外に以下のアカウント・支払いが必要です。これらはエンジニアが代行できない（個人情報・支払い情報の問題）ため、PO の青木が進めます。
+Wacca 実装には、コード以外に以下のアカウント・支払いが必要です。これらはエンジニアが代行できない（個人情報・支払い情報の問題）ため、PO の青木が進めます。
 
 | # | 項目 | コスト | 所要時間 | エンジニアブロック対象 |
 |---|---|---|---|---|
 | 1 | Supabase アカウント + プロジェクト | 無料（Hobby） | 15 分 | Issue #8, #12, #14 |
 | 2 | Google Cloud Console + OAuth クライアント | 無料 | 30 分 | Issue #9 |
 | 3 | Vercel アカウント + GitHub 連携 | 無料（Hobby） | 10 分 | Issue #11 |
-| 4 | ドメイン yuwa.club 取得 | 年 1,500〜2,500 円 | 15 分 | （ローンチ近で OK） |
+| 4 | ドメイン wacca.club 取得 | 年 1,500〜2,500 円 | 15 分 | （ローンチ近で OK） |
 | 5 | シークレットの安全な共有 | — | 10 分 | 上記全て |
 
 **チェックリストを上から順に進めれば OK**。各項目に詳細手順あり。
@@ -31,13 +31,13 @@ YUWA 実装には、コード以外に以下のアカウント・支払いが必
 
 - [ ] https://supabase.com にアクセス
 - [ ] **Sign up with GitHub**（青木さんの GitHub アカウント `aokiyuwadayo` で）
-- [ ] 組織名: 個人で良いなら自動で「Yuwa's Org」のような名前。後で `yuwa` に rename 可
+- [ ] 組織名: 個人で良いなら自動で「Yuwa's Org」のような名前。後で `wacca` に rename 可
 - [ ] メール確認
 
 ### 1.2 プロジェクト作成
 
 - [ ] **New Project** ボタン
-- [ ] Project name: `yuwa-production`（あるいは `yuwa-mvp`）
+- [ ] Project name: `wacca-production`（あるいは `wacca-mvp`）
 - [ ] **Database Password**: 強力なものを生成 → **必ず控える**（後で再表示されない）
   - 推奨: 1Password / Bitwarden 等のパスワードマネージャに保存
 - [ ] **Region: Northeast Asia (Tokyo)**（東京リージョン）← 重要
@@ -57,7 +57,7 @@ YUWA 実装には、コード以外に以下のアカウント・支払いが必
 ### 1.4 開発環境（dev）プロジェクトも作るか？（任意）
 
 本番と開発を分けたい場合:
-- [ ] 同じ手順で `yuwa-development` を別プロジェクトとして作成
+- [ ] 同じ手順で `wacca-development` を別プロジェクトとして作成
 - [ ] **ただし無料枠は 2 プロジェクトまで**。MVP では本番 1 つで進めて、必要になったら追加でも OK
 
 ### 1.5 ローカル Supabase（エンジニア用）
@@ -94,7 +94,7 @@ supabase stop
 
 - [ ] https://console.cloud.google.com/ にアクセス（青木さんの Google アカウントで）
 - [ ] 上部のプロジェクト選択 → **新しいプロジェクト**
-- [ ] プロジェクト名: `YUWA`
+- [ ] プロジェクト名: `Wacca`
 - [ ] 組織: なし（個人）
 - [ ] 作成
 
@@ -103,10 +103,10 @@ supabase stop
 - [ ] 左メニュー **APIs & Services** → **OAuth consent screen**
 - [ ] **External**（ユーザータイプ）を選択 → 作成
 - [ ] **App information**:
-  - App name: `YUWA`
+  - App name: `Wacca`
   - User support email: 青木さんのメール
   - App logo: 後で `docs/brand/icon-512.svg` から PNG 化して設定（任意）
-- [ ] **App domain** はローンチ前で OK、または `yuwa.club` を仮入力
+- [ ] **App domain** はローンチ前で OK、または `wacca.club` を仮入力
 - [ ] **Developer contact information**: 青木さんのメール
 - [ ] **保存して次へ**
 - [ ] **Scopes**: デフォルト（email, profile, openid）のまま
@@ -118,15 +118,15 @@ supabase stop
 - [ ] 左メニュー **APIs & Services** → **Credentials**
 - [ ] **Create Credentials** → **OAuth client ID**
 - [ ] Application type: **Web application**
-- [ ] Name: `YUWA Web Client`
+- [ ] Name: `Wacca Web Client`
 - [ ] **Authorized JavaScript origins**:
   - `http://localhost:3000`
-  - `https://yuwa.club`（ドメイン取得後に追加でも OK）
-  - `https://yuwa.vercel.app` (Vercel preview 用)
+  - `https://wacca.club`（ドメイン取得後に追加でも OK）
+  - `https://wacca.vercel.app` (Vercel preview 用)
 - [ ] **Authorized redirect URIs**:
   - `https://<supabase-project>.supabase.co/auth/v1/callback`（**Supabase の URL に置き換え**）
   - `http://localhost:3000/auth/callback`
-  - `https://yuwa.club/auth/callback`（ドメイン取得後に追加）
+  - `https://wacca.club/auth/callback`（ドメイン取得後に追加）
 - [ ] 作成 → **Client ID** と **Client secret** を控える
 
 ### 2.4 Supabase 側に Google OAuth を設定
@@ -166,13 +166,15 @@ supabase stop
 
 ---
 
-## 4. ドメイン yuwa.club 取得
+## 4. ドメイン wacca.club 取得
 
+> ⚠️ Wacca への改名に伴い、旧候補 yuwa.club から wacca.club（仮）に変更。**空き未確認**のため取得前に要チェック。別名になる場合は本節の表記を読み替えること。
+>
 > ローンチ近くで OK（Phase 4）。ここでは推奨レジストラと手順だけ記載。
 
 ### 4.1 レジストラの選び方
 
-| サービス | yuwa.club 年額 | 特徴 | 推奨度 |
+| サービス | wacca.club 年額 | 特徴 | 推奨度 |
 |---|---|---|---|
 | **Cloudflare Registrar** | 原価提供（≒$10-12） | 中間マージンなしで最安、Cloudflare DNS と統合 | ★★★ |
 | **Porkbun** | 約 $12 | 安価、無料 WHOIS プライバシー、UI 良い | ★★★ |
@@ -182,18 +184,18 @@ supabase stop
 ### 4.2 推奨: Cloudflare Registrar
 
 - [ ] https://dash.cloudflare.com にサインアップ（青木さん）
-- [ ] **Domains** → **Register Domain** → `yuwa.club` を検索
+- [ ] **Domains** → **Register Domain** → `wacca.club` を検索
 - [ ] 購入（クレジットカード）
 - [ ] Cloudflare の DNS が自動で設定される
 
 ### 4.3 Vercel 側でカスタムドメインを設定（ローンチ時）
 
 - [ ] Vercel Dashboard → プロジェクト → **Settings** → **Domains**
-- [ ] `yuwa.club` を追加
+- [ ] `wacca.club` を追加
 - [ ] 表示される DNS レコード（A or CNAME）を Cloudflare の DNS に追加
 - [ ] SSL 証明書は Vercel が自動で取得
 
-### 4.4 yuwa.club を選んだ後の表記の統一
+### 4.4 wacca.club を選んだ後の表記の統一
 
 ドメイン取得後、以下のドキュメントで「（取得予定）」「（未取得）」となっている箇所を更新:
 - README.md
@@ -260,7 +262,7 @@ openssl rand -base64 32
 | Vercel アカウント作成 | ⬜ | 青木 | | |
 | ANONYMOUS_HASH_SALT 生成 | ⬜ | 青木 | | パスワードマネージャに保存 |
 | シークレット共有手段の決定 | ⬜ | 青木 | | 1Password / Bitwarden / Signal |
-| ドメイン yuwa.club 取得 | ⬜ | 青木 | | ローンチ近で OK |
+| ドメイン wacca.club 取得 | ⬜ | 青木 | | ローンチ近で OK |
 
 ---
 
@@ -279,6 +281,6 @@ openssl rand -base64 32
 - [`CONTRIBUTING.md §3 ローカル開発のセットアップ`](../CONTRIBUTING.md)
 - [`requirements-v0.1.md §6 認証フロー`](requirements-v0.1.md)
 - 関連 Issue:
-  - [#8 Supabase プロジェクト作成 + 環境変数整備](https://github.com/aokiyuwadayo/yuwa/issues/8)
-  - [#9 Google OAuth クライアント作成](https://github.com/aokiyuwadayo/yuwa/issues/9)
-  - [#11 Vercel preview デプロイ環境構築](https://github.com/aokiyuwadayo/yuwa/issues/11)
+  - [#8 Supabase プロジェクト作成 + 環境変数整備](https://github.com/aokiyuwadayo/Wacca/issues/8)
+  - [#9 Google OAuth クライアント作成](https://github.com/aokiyuwadayo/Wacca/issues/9)
+  - [#11 Vercel preview デプロイ環境構築](https://github.com/aokiyuwadayo/Wacca/issues/11)
