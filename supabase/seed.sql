@@ -1,10 +1,12 @@
-insert into public.organizations (id, name, slug, anonymity_salt)
+insert into public.organizations (id, name, slug, anonymity_salt, allowed_email_domains)
 values (
   '00000000-0000-4000-8000-000000000001',
   '起業部',
   'kigyou-bu',
-  'local-dev-kigyou-bu-anonymity-salt-change-in-production'
+  'local-dev-kigyou-bu-anonymity-salt-change-in-production',
+  '{example.com,fit.ac.jp,bene.fit.ac.jp}'
 )
 on conflict (slug) do update
 set
-  name = excluded.name;
+  name = excluded.name,
+  allowed_email_domains = excluded.allowed_email_domains;

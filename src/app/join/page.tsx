@@ -85,6 +85,11 @@ export default async function JoinPage({
       </Card>
 
       <p className="text-center text-xs text-muted-foreground">
+        登録済みの大学メールをお持ちの方は{" "}
+        <Link href="/login" className="underline">
+          大学メールでログイン
+        </Link>
+        {" "}／{" "}
         <Link href="/" className="underline">
           トップに戻る
         </Link>
