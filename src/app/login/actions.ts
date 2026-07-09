@@ -6,18 +6,7 @@ import {
   ensureMemberForEmailDomain,
   isAllowedEmailDomain,
 } from "@/lib/email-login";
-
-export interface LoginFormState {
-  step: "request" | "verify";
-  email: string;
-  error?: string;
-  notice?: string;
-}
-
-export const initialLoginState: LoginFormState = {
-  step: "request",
-  email: "",
-};
+import type { LoginFormState } from "./login-state";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

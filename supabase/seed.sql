@@ -4,7 +4,7 @@ values (
   '起業部',
   'kigyou-bu',
   'local-dev-kigyou-bu-anonymity-salt-change-in-production',
-  '{example.com}'
+  '{example.com,fit.ac.jp,bene.fit.ac.jp}'
 )
 on conflict (slug) do update
 set
